@@ -1,0 +1,201 @@
+<?php session_start(); 
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Medidas Antropometricas</title>
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="css/bootstrap.min.css">
+      <!-- style css -->
+      <link rel="stylesheet" href="css/style_salud.css">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="css/responsive.css">
+      <!-- fevicon -->
+      <link rel="icon" href="images/fevicon.png" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="css/jquery.mCustomScrollbar.min.css">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <!-- fonts -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
+      <!-- font awesome css -->
+      <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+      </head>
+   <body>
+      <!-- header section start -->
+       <header>
+         <div class="header_section">
+            <div class="container">
+               <nav class="navbar">
+                 <ul class="navbar-nav">
+                 <li class="nav-item">
+                         <a class="nav-link" href="index.php">Menu</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="salud.php">Salud</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="actividadFisica.php">Actividad Fisica</a>
+                     </li>
+                     <li class="nav-item">
+                         <a class="nav-link" href="Editar.php">Perfil</a>
+                     </li>
+                     <li class="nav-item">
+                           <a class="nav-link" href="login.php">Log-In</a>
+                     </li>
+                 </ul>
+               </nav>
+           </div>
+         </div>
+         <!-- banner section start -->
+         <div class="banner_section layout_padding">
+            <section class="slide-wrapper">
+               <div class="container-fluid">
+                  <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                     <ol class="carousel-indicators">
+                        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#myCarousel" data-slide-to="1"></li>
+                        <li data-target="#myCarousel" data-slide-to="2"></li>
+                        <li data-target="#myCarousel" data-slide-to="3"></li>
+                     </ol>
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <div class="container-fluid">
+                              <div class="row">
+                                 <div class="col-md-6">
+                                    <div class="banner_taital_main">
+                                       <h1 class="banner_taital">Control Medidas Antropométricas</h1>
+                                    </div>
+                                 </div>
+                                 <div class="col-md-6">
+                                    <div class="social_icon">
+                                    <ul>
+                                       <li><a href="https://www.facebook.com" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                                       <li><a href="https://www.twitter.com" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+                                       <li><a href="https://www.linkedin.com" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                                       <li><a href="https://www.instagram.com" target="_blank"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                                    </ul>
+                                    </div>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>                        
+                     </div>
+                  </div>
+               </div>
+            </section>
+         </div>
+         <!-- banner section end -->
+      </header>
+      <!-- header section end -->
+
+      <main>
+
+         <section>
+             <p class="medidas" id= "medidas"></p>
+             <h2>Medidas Antropométricas</h2>
+             <br>
+             <?php include('display_medidas.php'); ?>
+         </section>
+ 
+ 
+         <section>
+             <p class="newMedida" id= "newMedida"></p>
+             <h2>Incluir Medidas Antropométricas</h2>
+             <p>Complete el formulatio para incluir un nuevo set de medidas:</p>
+             <form method="POST" action="procesar_medidas.php">
+                 <label>Fecha</label>
+                 <br>
+                 <input type="date" name="date" id="date" required>
+                 <br>
+                 <label>Usuario</label>
+                 <br>
+                 <input type="number" name="user_id" id="user_id" required>
+                 <br>
+                 <label>Altura</label>
+                 <br>
+                 <input type="number" name="height" id="height" step="0.01" required> <label>m</label>
+                 <br>
+                 <label>Peso</label> 
+                 <br>               
+                 <input type="number" name="weight" id="weight" step="0.01" required> <label>Kg</label>
+                 <br>
+                 <label>Porcentaje Grasa</label> 
+                 <br>               
+                 <input type="number" name="fat_pct" id="fat_pct" step="0.01" required> <label>%</label>
+                 <br>
+                 <label>Agua</label>      
+                 <br>          
+                 <input type="number" name="water" id="water" step="0.01" required> <label>L</label>
+                 <br>
+                 <label>Musculo</label> 
+                 <br>               
+                 <input type="number" name="muscle" id="muscle" step="0.01" required> <label>Kg</label>
+                 <br>
+                 <label>Hueso</label>   
+                 <br>             
+                 <input type="number" name="bone" id="bone" step="0.01" required> <label>Kg</label>
+                 <br>
+                 <br>
+                 <button type="submit">Send</button>
+                 <button type="reset">Reset</button>
+             </form>
+ 
+         </section>
+             
+     </main>
+
+
+
+
+
+
+      
+      <!-- seccion footer inicia -->
+      <div class="footer_section">
+         <div class="container">
+            <div class="location_text">
+               <ul>
+                  <li>
+                     <a href="#"><i class="fa fa-map-marker" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                     <a href="#"><i class="fa fa-phone" aria-hidden="true"></i></a>
+                  </li>
+                  <li>
+                     <a href="#"><i class="fa fa-envelope" aria-hidden="true"></i></a>
+                  </li>
+               </ul>
+            </div>
+         </div>
+      </div>
+      <!-- seccion footer termina -->
+      <!-- seccion copyright -->
+      <div class="copyright_section">
+         <div class="container">
+            <p class="copyright_text">2024 All Rights Reserved.</p>
+         </div>
+      </div>
+      <!-- seccion copyright -->
+      <!-- JS -->
+      <script src="js/jquery.min.js"></script>
+      <script src="js/popper.min.js"></script>
+      <script src="js/bootstrap.bundle.min.js"></script>
+      <script src="js/jquery-3.0.0.min.js"></script>
+      <script src="js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="js/custom.js"></script>
+
+   </body>
+</html>

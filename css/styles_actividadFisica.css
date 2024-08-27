@@ -1,0 +1,281 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #3685cb;
+    margin: 0;
+    padding: 0;
+}
+
+.back-to-menu {
+    position: fixed;
+    top: 90px;
+    right: 30px;
+    border: none;
+    z-index: 1000;
+}
+
+.back-to-menu img {
+    width: 40px;  /* Ajusta el tamaño según sea necesario */
+    height: 40px;  /* Ajusta el tamaño según sea necesario */
+    border-radius: 4px;
+}
+
+.back-to-menu img:hover {
+    filter: brightness(0.8);
+}
+/* General Styles */
+
+.header_section {
+    width: 100%;
+    background: #000;
+    padding: 20px 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    
+}
+
+.navbar {
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-nav {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-item {
+    margin: 0 15px;
+}
+
+.nav-link {
+    color: #fefefd;
+    font-size: 18px;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    color: #3685cb;
+}
+
+.search-container {
+    display: flex;
+    align-items: right;
+    background-color: red;
+    margin-left: 40%;
+}
+
+.search-container input[type="text"] {
+    padding: 8px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    
+}
+
+.search-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0 8px;
+}
+
+.search-button img {
+    vertical-align: middle;
+}
+/* fin contenedor */
+
+.container {
+    max-width: 1000px;
+    height: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.container h1{
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 35px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #3685cb;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header button {
+    padding: 10px 20px;
+    background-color: #56acf7;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+header button:hover {
+    background-color: rgb(40, 99, 162);
+}
+
+#filterSection, #activityList {
+    margin-bottom: 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding-top: 60px;
+}
+.modal-content {
+    background-color: #fff;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: modalOpen 0.3s;
+}
+
+@keyframes modalOpen {
+    from { opacity: 0; transform: translateY(-50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.form-group img {
+    margin-right: 10px;
+}
+
+.form-group label {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-group input {
+    flex: 2;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #3685cb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover {
+    background-color: #2695c4;
+}
+#guardarBoton{
+    width: 100%;
+    height: 2%;
+    padding: 10px;
+    background-color: #3685cb;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.container  #boton_read{
+    width: 100px;
+    height: 10%;
+    padding: 10px;
+    background-color: #2695c4;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+/* Estilo general de la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 16px;
+    color: #333;
+    background-color: #f8f8f8;
+}
+
+/* Estilo de las cabeceras de la tabla */
+.table thead th {
+    background-color: #007bff; /* Color de fondo azul */
+    color: #fff; /* Color del texto blanco */
+    padding: 12px;
+    text-align: left;
+    border-bottom: 2px solid #0056b3; /* Línea de separación más oscura */
+}
+
+/* Estilo de las filas del cuerpo de la tabla */
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Fondo gris claro para filas pares */
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #ffffff; /* Fondo blanco para filas impares */
+}
+
+/* Estilo de las celdas */
+.table td, .table th {
+    padding: 12px;
+    border: 1px solid #ddd; /* Línea de borde ligera */
+}
+
+/* Estilo de las celdas al pasar el mouse sobre la fila */
+.table tbody tr:hover {
+    background-color: #e2e2e2; /* Fondo gris claro al pasar el mouse */
+}
+
+/* Estilo de la tabla cuando no hay datos */
+.table p {
+    text-align: center;
+    color: #999;
+    padding: 20px;
+}
